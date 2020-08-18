@@ -18,17 +18,16 @@ tan(pi / 6)
 
 # 3
 ## a
-z = seq(1, 40, 2)
+z = seq(1, 39, 2)
 ## b
 sum(z)
 ## c
-w = which(z %% 3 == 0)
-z[w]
+z[z %% 3 == 0]
 ## d
-z[w] / 3
+z[z %% 3 == 0] / 3
 
 # 4
-sum(seq(2, 1000, 2))
+sum(seq(2, 998, 2))
 
 # 5
 v = sqrt(1 : 20)
@@ -55,7 +54,7 @@ paste(az, am)
 
 # 8
 nome = "renato"
-sub("r", "R", nome)
+paste(toupper(substr(nome, 1, 1)), substr(nome, 2, nchar(nome)), sep = "")
 
 # 9
 numeros = c(1, 2, 3)
@@ -75,11 +74,16 @@ which.max(gastos)
 ## c
 length(which(gastos > mean(gastos)))
 x = which(gastos > mean(gastos))
-y = gastos[gastos > mean(gastos)] / sum(gastos)
+y = gastos[gastos > mean(gastos)] / sum(gastos) * 100
 paste(x, y, sep = ": ")
 
 # 11
 ## a
-p = round(runif(100, 1, 100))
+pts = round(runif(100, 1, 100))
 ## b
-niveis = c("Mau", "Insuficiente", "Bom", "Muito Bom")
+nivel = rep("", 100)
+nivel[which(pts < 20)] = "Mau"
+nivel[which(pts >= 20 & pts < 50)] = "Insuficiente"
+nivel[which(pts >= 50 & pts < 80)] = "Bom"
+nivel[which(pts >= 80)] = "Muito Bom"
+table(nivel)
