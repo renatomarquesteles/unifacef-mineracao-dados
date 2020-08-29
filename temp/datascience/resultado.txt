@@ -1,0 +1,2 @@
+Este é o valor da variável x: 2 3 5 9 
+Esta linha é adicionada depois da linha anterior no mesmo arquivo
