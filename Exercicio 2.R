@@ -34,3 +34,44 @@ vet3 * 2 + 3
 
 # 4
 ## a
+A = matrix(2, 2, 3)
+B = matrix(1 : 6, 2, 3)
+## b
+A + B
+## c
+dim(B) = c(3, 2)
+## d
+A %*% B
+
+# 5
+## a
+l = list(nome = "João", idade = 30)
+## b
+l
+l$nome
+l$idade
+l[[1]]
+l[[2]]
+
+# 6
+## a
+data(pressure)
+pressure
+x = pressure
+## b
+mean(x$pressure)
+## c
+subset(x, subset = x$temperature == 320, select = c(pressure))
+## d
+max(subset(x, subset = x$temperature < 100, c(pressure)))
+## e
+df = data.frame(subset(x, subset = x$pressure < 100))
+df
+
+# 7
+data(sleep)
+sleep
+## a
+mapply(class, sleep)
+## b
+tapply(sleep$extra, sleep$group, mean)
