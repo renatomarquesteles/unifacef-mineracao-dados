@@ -16,11 +16,18 @@ sum(mat[1,])
 ## f
 apply(mat, 2, mean)
 
+v_media = c(mean(mat[,1]), mean(mat[,2]), mean(mat[,3]))
+v_media
+
 # 2
 ## a
 vet2 = c(1 : 100)
+
+vetor = 1 : 100
 ## b
 matrix(vet2, 10, 10)
+
+dim(vetor) = c(10, 10)
 
 # 3
 ## a
@@ -62,11 +69,17 @@ x = pressure
 mean(x$pressure)
 ## c
 subset(x, subset = x$temperature == 320, select = c(pressure))
+
+x[x$temperature == 320, 2]
 ## d
 max(subset(x, subset = x$temperature < 100, c(pressure)))
+
+max(x[x$temperature < 100, 2])
 ## e
 df = data.frame(subset(x, subset = x$pressure < 100))
 df
+
+x[x$pressure < 100, ]
 
 # 7
 data(sleep)
