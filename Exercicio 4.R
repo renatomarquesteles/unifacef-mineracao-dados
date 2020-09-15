@@ -21,6 +21,13 @@ p2
 distancia = dt.euclidiana(p1, p2)
 distancia
 
+"distancia" = function (x1, y1, x2, y2) {
+  r = (x1 - x2)^2 + (y1-y2)^2
+  sqrt(r)
+}
+
+distancia(10, 20, 30, 40)
+
 # 3
 vet = 123 : 155
 vet
@@ -34,6 +41,15 @@ vet
 }
 
 contador.pares(vet)
+
+"conta.pares" <- function(vetor) {
+  v1 = ((vetor %% 2) == 0)
+  nr_total = sum(v1)
+  nr_total
+}
+
+v_teste = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+conta.pares(v_teste)
 
 # 4
 "manipula.string" = function(frase) {
@@ -84,6 +100,20 @@ compara(18, 15)
 
 vet = c(57 : 69)
 media(vet)
+
+"media.vetor" = function (vetor) {
+  s = 0
+  n = 0
+  
+  for (i in vetor) {
+    s = s + i
+    n = n + 1
+  }
+  s/n
+}
+
+vetor_a = c(10, 5, 6, 90, 15)
+media.vetor(vetor_a)
 
 # 8
 "abaixo.limite" = function(vet, limite) {
@@ -152,3 +182,16 @@ mat2
 
 soma.matrizes(mat1, mat2)
 
+"soma.matrizes" = function (m1, m2) {
+  res = matrix(, nrow = nrow(m1), ncol = ncol(m1))
+  
+  for (i in 1 : nrow(m1))
+    for (j in 1 : ncol(m1))
+      res[i, j] = m1[i, j] + m2[i, j]
+  res
+}
+
+
+matriz_a = matrix(1 : 9, 3, 3)
+matriz_b = matrix(1 : 9, 3, 3)
+soma.matrizes(matriz_a, matriz_b)
