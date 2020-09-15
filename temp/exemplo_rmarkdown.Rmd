@@ -1,0 +1,53 @@
+---
+title: "Exemplo Aula Mineração de Dados"
+output:
+  html_document: default
+---
+
+## Formatos
+
+Pode-se escolher um formato alterando a linha que diz "output:
+**html_document**" para qualquer um destes formatos:
+
+* pdf_document
+* word_document
+* ...
+
+Cada formato pode ser visto em melhor detalhe
+[aqui](http://rmarkdown.rstudio.com), em **Formats**.
+
+Pode-se usar *itálico* e **negrito** e escrever equações semelhante ao latex
+com $y = \frac{1}{n}$
+
+```
+# Bloco de codigo verbatim
+x <- 3
+```
+
+## Exemplo de uma tabela
+
+Número | Nome
+-------|----------------
+A65780 | Joaquim Almeida
+A23456 | Pedro Pinto
+
+Para usar imagens da Internet ou armazenadas em disco:
+
+![Imagem do logo do R](https://www.r-project.org/Rlogo.png)
+
+## Executar código R
+Por exemplo, a raíz cúbica de 9 = `r 9^(1/3)`.
+
+Para manter o mesmo diretório em todos os blocos de código, basta colocar no
+bloco inicial:
+```
+setwd("C:/temp")
+opts_knit$set(root.dir = getwd())
+```
+
+Exemplo de bloco de código executado:
+```{r exemplo, fig.height=4, fig.width=5}
+x = 1:10
+y = 21:30
+plot(x,y)
+```
