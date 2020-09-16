@@ -141,6 +141,27 @@ abaixo.limite(vet, 10)
 vet = c(5 : 15)
 menor.dez(vet)
 
+## b
+"nr.minimo.elementos" = function (vetor, soma) {
+  vetor = sort(vetor)
+  conta_elem = 0
+  soma_elem = 0
+  i = 1
+  
+  while (i <= length(vetor)) {
+    if (soma_elem < soma) {
+      conta_elem = conta_elem + 1
+      soma_elem = soma_elem + vetor[i]
+    }
+    i = i + 1
+  }
+  paste("Qtde de elementos para atingir a SOMA:", conta_elem)
+}
+
+vetor_a = c(15, 25, 5, 20, 10)
+
+nr.minimo.elementos(vetor_a, 30)
+
 # 10
 "maior.elemento" = function(mat) {
   maior = 0
