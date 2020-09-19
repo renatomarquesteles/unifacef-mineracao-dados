@@ -143,7 +143,7 @@ menor.dez(vet)
 
 ## b
 "nr.minimo.elementos" = function (vetor, soma) {
-  vetor = sort(vetor)
+  vetor = sort(vetor, decreasing = TRUE)
   conta_elem = 0
   soma_elem = 0
   i = 1
